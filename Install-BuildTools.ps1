@@ -3,7 +3,7 @@
 # Check .NET Framework 4.6+ installation
 $netfxReleaseKey = Get-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full" -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Release -ErrorAction SilentlyContinue
 
-if ($netfxReleaseKey -lt 393295) {
+if ($netfxReleaseKey -lt 460799) {
     # .NET 4.6+ not installed
     Write-Host "[*] .NET Framework 4.6 or higher is required. Downloading and installing .NET Framework 4.8..." -ForegroundColor Yellow
 
