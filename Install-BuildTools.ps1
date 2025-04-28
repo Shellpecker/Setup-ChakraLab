@@ -1,33 +1,8 @@
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 -bor [Net.SecurityProtocolType]::Tls13
 $ProgressPreference = 'SilentlyContinue'
 
-# Check .NET Framework 4.6+ installation
-$netfxReleaseKey = Get-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full" -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Release -ErrorAction SilentlyContinue
-
-if ($netfxReleaseKey -lt 460799) {
-    # .NET 4.6+ not installed
-    Write-Host "[*] .NET Framework 4.6 or higher is required. Downloading and installing .NET Framework 4.8..." -ForegroundColor Yellow
-
-    # Define download URL (official Microsoft .NET 4.8 offline installer)
-    $downloadUrl = "https://go.microsoft.com/fwlink/?linkid=840938"
-
-    # Define download location
-    $installerPath = "$env:TEMP\ndp48-x86-x64-allos-enu.exe"
-
-    # Download the installer
-    Invoke-WebRequest -Uri $downloadUrl -OutFile $installerPath
-
-    Write-Host "[*] Download complete. Launching .NET Framework installer..." -ForegroundColor Green
-
-    # Launch the installer (silent install)
-    Start-Process -FilePath $installerPath -ArgumentList "/quiet /norestart" -Wait
-
-    Write-Host "[*] .NET Framework installation started. Please reboot the system after installation if required." -ForegroundColor Cyan
-}
-
-
 # Set variables
-$buildToolsUrl = "https://aka.ms/vs/17/release/vs_BuildTools.exe"
+$buildToolsUrl = "https://aka.ms/vs/15/release/vs_BuildTools.exe"
 $installerPath = "$env:TEMP\vs_BuildTools.exe"
 $installPath = "C:\BuildTools"
 
