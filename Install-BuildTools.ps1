@@ -23,8 +23,6 @@ if ($netfxReleaseKey -lt 460799) {
     Start-Process -FilePath $installerPath -ArgumentList "/quiet /norestart" -Wait
 
     Write-Host "[*] .NET Framework installation started. Please reboot the system after installation if required." -ForegroundColor Cyan
-
-    exit 1
 }
 
 
