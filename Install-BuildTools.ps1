@@ -5,6 +5,8 @@ $buildToolsUrl = "https://aka.ms/vs/17/release/vs_BuildTools.exe"
 $installerPath = "$env:TEMP\vs_BuildTools.exe"
 $installPath = "C:\BuildTools"
 
+
+mkdir $installPath
 # Download the installer
 Invoke-WebRequest -Uri $buildToolsUrl -OutFile $installerPath
 
