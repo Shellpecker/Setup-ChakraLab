@@ -9,7 +9,7 @@ if ($netfxReleaseKey -lt 460799) {
     Write-Host "[*] .NET Framework 4.6 or higher is required. Downloading and installing .NET Framework 4.8..." -ForegroundColor Yellow
 
     # Define download URL (official Microsoft .NET 4.8 offline installer)
-    $downloadUrl = "https://go.microsoft.com/fwlink/?linkid=2088631"
+    $downloadUrl = "https://go.microsoft.com/fwlink/?linkid=840938"
 
     # Define download location
     $installerPath = "$env:TEMP\ndp48-x86-x64-allos-enu.exe"
