@@ -6,7 +6,7 @@ $installerPath = "$env:TEMP\vs_BuildTools.exe"
 $installPath = "C:\BuildTools"
 
 
-mkdir $installPath
+mkdir "$installPath"
 # Download the installer
 Invoke-WebRequest -Uri $buildToolsUrl -OutFile $installerPath
 
