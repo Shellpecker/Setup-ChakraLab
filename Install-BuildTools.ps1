@@ -22,7 +22,7 @@ Start-Process -FilePath $installerPath -ArgumentList `
     "--add Microsoft.VisualStudio.Component.VC.Tools.x86.x64",
     "--add Microsoft.VisualStudio.Component.VC.CoreBuildTools",
     "--add Microsoft.VisualStudio.Component.VC.ATL",
-    "--add Microsoft.VisualStudio.Component.Windows10SDK.19041" `
+    "--add Microsoft.VisualStudio.Component.Windows10SDK.10240" `
     -Wait -NoNewWindow
 
 # Remove the installer after install
