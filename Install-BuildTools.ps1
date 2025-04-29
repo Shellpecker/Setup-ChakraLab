@@ -30,7 +30,7 @@ Remove-Item $installerPath -Force
 
 # Locate MSBuild.exe
 $msbuildPath = Get-ChildItem -Path "$installPath\MSBuild" -Recurse -Filter MSBuild.exe -ErrorAction SilentlyContinue |
-    Where-Object { $_.FullName -like "*Current\Bin\MSBuild.exe" } |
+    Where-Object { $_.FullName -like "*15.0\Bin\MSBuild.exe" } |
     Select-Object -First 1 -ExpandProperty FullName
 
 if ($msbuildPath) {
