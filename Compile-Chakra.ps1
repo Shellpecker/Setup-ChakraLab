@@ -1,6 +1,6 @@
 # Force TLS 1.2
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-$global:progressPreference = 'silentlyContinue'
+$ProgressPreference = 'SilentlyContinue'
 
 # Variables
 $commit = "331aa3931ab69ca2bd64f7e020165e693b8030b5"
